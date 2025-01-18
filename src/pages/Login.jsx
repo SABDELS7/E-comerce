@@ -1,11 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
+
+  const [currentState, setCurrentState] = useState('Sign Up'); 
+
   return (
-    <div>
+    <form>
       
-    </div>
+    </form>
   )
 }
 

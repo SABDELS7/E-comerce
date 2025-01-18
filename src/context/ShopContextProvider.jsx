@@ -94,6 +94,7 @@ const ShopContextProvider = (props) => {
         getCartCount,
         updateQuantity,
         getCartAmount,
+        navigate,
         // Add more context variables as needed...
     };
 
