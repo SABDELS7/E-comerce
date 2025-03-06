@@ -20,14 +20,14 @@ const Contact = () => {
         <div className="flex flex-col justify-center items-start gap-6">
           <p className="font-semibold text-xl text-gray-600">Our Store</p>
           <p className="text-gray-500">
-            Infocity,Chandrasekharpur <br />
-            Bhubaneswar,Odisha-751024
+            Oujda, Morocco <br />
+            BestWatches Street, Oujda-751024
           </p>
           <p className="text-gray-500">
-            Tel: +91 82490-01710 <br /> Email: abhijit@example.com
+            Tel: +212 644-560008 <br /> Email: salmiabdderrahmane@gmail.com
           </p>
           <p className="font-semibold text-xl text-gray-600">
-            Careers at Forever
+            Careers at TimeLuxe
           </p>
           <p className="text-gray-500">
             Learn more about our teams and job opening.

@@ -19,25 +19,17 @@ const About = () => {
         />
         <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-600">
           <p className="">
-            {`Forever was born out of a passion for innovation and a desire to
-            revolutionize the way people shop online. Our journey began with a
-            simple idea: to provide a platform where customers can easily
-            discover, explore, and purchase a wide range of products from the
-            comfort of their homes.`}
+            {`TimeLuxe was born out of a timeless elegance and a desire to
+            redefine the way people experience luxury watches. Our journey began with a
+            simple vision: to create a platform where watch enthusiasts can effortlessly
+            discover, explore, and own exquisite timepieces that reflect their unique style`}
           </p>
           <p className="">
-            {` Since our inception, we've worked tirelessly to curate a diverse
-            selection of high-quality products that cater to every taste and
-            preference. From fashion and beauty to electronics and home
-            essentials, we offer an extensive collection sourced from trusted
-            brands and suppliers.`}
+            {` Since our inception, we've dedicated ourselves to curating a collection of premium watches that blend craftsmanship, innovation, and sophistication. From classic designs to modern masterpieces, each watch is carefully selected to cater to the discerning tastes of our customers.`}
           </p>
           <strong className="text-gray-800">Our Mission</strong>
           <p>
-            {`Our mission at Forever is to empower customers with choice,
-            convenience, and confidence. We're dedicated to providing a seamless
-            shopping experience that exceeds expectations, from browsing and
-            ordering to delivery and beyond.`}
+            {`At Timeluxe, our mission is to inspire confidence and elevate your style with every tick of the clock. We’re committed to delivering an unparalleled shopping experience, from seamless browsing and personalized recommendations to prompt delivery and exceptional customer service.`}
           </p>
         </div>
       </div>

@@ -21,9 +21,7 @@ const LatestCollection = () => {
       <div className="text-center py-8 text-3xl">
         <Title text1={"LATEST"} text2={"COLLECTIONS"} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
-          amet doloremque asperiores, distinctio ipsum optio velit nemo rerum
-          reprehenderit, eaque ducimus ut repudiandae veniam illo!
+        Step into the world of best-selling watches, where exceptional craftsmanship meets timeless style. Whether you're drawn to sleek modern designs or classic elegance, our curated collection offers the perfect timepiece to elevate your look and keep you on track in style.
         </p>
       </div>
       {/* Rendering Products */}

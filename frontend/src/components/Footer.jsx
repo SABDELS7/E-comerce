@@ -7,7 +7,7 @@ const Footer = () => {
             <div>
                 <img src={assets.logo} className='mb-5 w-32' alt="" />
                 <p className='w-full md:w-2/3 text-gray-600' >
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima cum repudiandae suscipit tempore eum sapiente eveniet nemo! Consequatur dignissimos error veritatis corporis ipsum velit ipsa sint, aliquam sed fugiat dolore.
+                At Timeluxe, we believe in the art of timeless elegance. Our watches are crafted with precision and passion, designed to complement your style and stand the test of time. Explore our collection and experience the perfect blend of tradition and innovation.
                 </p>
             </div>
 
@@ -24,8 +24,8 @@ const Footer = () => {
             <div>
                 <p className='text-xl font-medium mb-5' >GET IN TOUCH</p>
                 <ul className='flex flex-col gap-1 text-gray-600' >
-                    <li>+1-212-456-7890</li>
-                    <li>contact@foreveryou.com</li>
+                    <li>+212 644-560008</li>
+                    <li>contact@timeluxe.com</li>
                 </ul>
             </div>
 
@@ -33,10 +33,10 @@ const Footer = () => {
 
         <div>
             <hr />
-            <p className='py-5 text-sm text-center' >Copyright 2024@ forever.com - All Right Reserved.</p>
+            <p className='py-5 text-sm text-center' >Copyright {new Date().getFullYear()}@ timeluxe.com - All Right Reserved.</p>
         </div>
     </div>
   )
 }
 
-export default Footer
+export default Footer;

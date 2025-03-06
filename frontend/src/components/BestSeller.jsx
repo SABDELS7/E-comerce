@@ -17,9 +17,7 @@ const BestSeller = () => {
       <div className="text-center text-3xl py-8">
         <Title text1={"BEST"} text2={"SELLERS"} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-          officia tempora reiciendis qui voluptatem consequuntur modi blanditiis
-          atque optio voluptas quisquam eaque porro, sed laboriosam.
+        Discover our top-rated watches – the favorites loved by our customers for their impeccable design, reliability, and style. Find your next statement piece and join the ranks of those who appreciate timeless quality.
         </p>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
