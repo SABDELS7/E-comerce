@@ -10,7 +10,7 @@ const Product = () => {
   const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
-  const [size, setSize] = useState("");
+  // const [size, setSize] = useState("");
   const fetchProductData = async () => {
     products.map((item) => {
       if (item._id === productId) {
@@ -69,7 +69,7 @@ const Product = () => {
           <p className="mt-5 text-gray-500 md:w-4/5">
             {productData.description}
           </p>
-          <div className="fle flex-col gap-4 my-8">
+          {/* <div className="fle flex-col gap-4 my-8">
             <p>Select Size</p>
             <div className="flex gap-2">
               {productData.sizes.map((item, index) => (
@@ -84,10 +84,10 @@ const Product = () => {
                 </button>
               ))}
             </div>
-          </div>
+          </div> */}
           <button
             className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
-            onClick={() => addToCart(productData._id, size)}
+            onClick={() => addToCart(productData._id)}  //,size
           >
             ADD TO CART
           </button>

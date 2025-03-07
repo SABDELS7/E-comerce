@@ -21,6 +21,20 @@ a.active hr{
 ::-webkit-scrollbar{
     display: none;
 }
+
+/* Dark mode styles */
+.dark {
+    background-color: #1a202c; /* Dark background */
+    color: #ffffff; /* Light text */
+  }
+  
+  .dark .navbar {
+    background-color: #2d3748; /* Dark navbar */
+  }
+  
+  .dark .text-gray-700 {
+    color: #cbd5e0; /* Light text for dark mode */
+  }
   
 @media (max-width: 640px){
     a.active{
