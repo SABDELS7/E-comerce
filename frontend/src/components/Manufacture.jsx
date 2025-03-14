@@ -18,8 +18,8 @@ const Manufacture = () => {
       </div>
 
       {/* Text Section */}
-      <div className='w-full sm:w-1/2 p-4 sm:p-8 flex flex-col justify-center'>
-        <h1 className='text-2xl sm:text-3xl font-semibold mb-4 text-gray-800'>Manufacturing</h1>
+      <div className='w-full sm:w-1/2 p-4 sm:p-8 flex flex-col justify-center '>
+        <h1 className='text-2xl sm:text-3xl font-semibold mb-4 text-gray-800 dark:text-white'>Manufacturing</h1>
         <p className='text-sm sm:text-base text-gray-600 leading-relaxed'>
           Every timepiece is powered by its beating heart: the movement. Crafting a movement demands a culture of innovation, unwavering passion, meticulous precision, and artistic finesse – qualities that define <strong>TimeLuxe&apos;s</strong> legacy in watchmaking.
           <br /><br />

@@ -24,7 +24,7 @@ const Cart = () => {
           if (cartItems[items][item] > 0) {
             tempData.push({
               _id: items,
-              size: item,
+              color: item,
               quantity: cartItems[items][item],
             });
           }
@@ -67,7 +67,7 @@ const Cart = () => {
                       {productData.price}
                     </p>
                     <p className="px-2 sm:px-3 sm:py-1 border bg-slate-50">
-                      {item.size}
+                      {item.color}
                     </p>
                   </div>
                 </div>
@@ -82,7 +82,7 @@ const Cart = () => {
                     ? null
                     : updateQuantity(
                         item._id,
-                        item.size,
+                        item.color,
                         Number(e.target.value)
                       )
                 }
@@ -91,7 +91,7 @@ const Cart = () => {
                 src={assets.bin_icon}
                 alt="Bin Icon"
                 className="w-4 mr-4 cursor-pointer"
-                onClick={() => updateQuantity(item._id, item.size, 0)}
+                onClick={() => updateQuantity(item._id, item.color, 0)}
               />
             </div>
           );

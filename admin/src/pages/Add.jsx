@@ -14,8 +14,8 @@ const Add = ({ token }) => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("Men");
-  const [subCategory, setSubCategory] = useState("Topwear");
-  // const [sizes, setSizes] = useState([]);
+  const [subCategory, setSubCategory] = useState("Luxury");
+  const [colors, setColors] = useState([]);
   const [bestseller, setBestseller] = useState(false);
 
   const [loader, setLoader] = useState(false);
@@ -31,7 +31,7 @@ const Add = ({ token }) => {
       formData.append("category", category);
       formData.append("subCategory", subCategory);
       formData.append("bestseller", bestseller);
-      // formData.append("sizes", JSON.stringify(sizes));
+      formData.append("colors", JSON.stringify(colors));
       image1 && formData.append("image1", image1);
       image2 && formData.append("image2", image2);
       image3 && formData.append("image3", image3);
@@ -52,9 +52,9 @@ const Add = ({ token }) => {
         setImage3(false);
         setImage4(false);
         setCategory("Men");
-        setSubCategory("Topwear");
+        setSubCategory("Luxury");
         setPrice("");
-        // setSizes([]);
+        setColors([]);
       } else {
         toast.error(response.data.message);
       }
@@ -161,17 +161,17 @@ const Add = ({ token }) => {
             <option value="Kids">Kids</option>
           </select>
         </div>
-        {/* <div>
+        <div>
           <p className="mb-2">{"Sub Category"}</p>
           <select
             className="w-full px-3 py-2"
             onChange={(e) => setSubCategory(e.target.value)}
           >
-            <option value="Topwear">Topwear</option>
-            <option value="Bottomwear">Bottomwear</option>
-            <option value="Winterwear">Winterwear</option>
+            <option value="Topwear">Luxury</option>
+            <option value="Vintage">Vintage</option>
+            <option value="Sport">Sport</option>
           </select>
-        </div> */}
+        </div>
         <div>
           <p className="mb-2">Product Price</p>
           <input
@@ -183,96 +183,96 @@ const Add = ({ token }) => {
           />
         </div>
       </div>
-      {/* <div>
-        <p className="mb-2">Product Sizes</p>
+      <div>
+        <p className="mb-2">Product Colors</p>
         <div className="flex gap-3">
           <div
             onClick={() =>
-              setSizes((prev) =>
-                prev.includes("S")
-                  ? prev.filter((item) => item !== "S")
-                  : [...prev, "S"]
+              setColors((prev) =>
+                prev.includes("Black")
+                  ? prev.filter((item) => item !== "Black")
+                  : [...prev, "Black"]
               )
             }
           >
             <p
               className={`${
-                sizes.includes("S") ? "bg-pink-100" : "bg-slate-200"
+                colors.includes("Black") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              S
+              BLACK
             </p>
           </div>
           <div
             onClick={() =>
-              setSizes((prev) =>
-                prev.includes("M")
-                  ? prev.filter((item) => item !== "M")
-                  : [...prev, "M"]
+              setColors((prev) =>
+                prev.includes("White")
+                  ? prev.filter((item) => item !== "White")
+                  : [...prev, "White"]
               )
             }
           >
             <p
               className={`${
-                sizes.includes("M") ? "bg-pink-100" : "bg-slate-200"
+                colors.includes("White") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              M
+              WHITE
             </p>
           </div>
           <div
             onClick={() =>
-              setSizes((prev) =>
-                prev.includes("L")
-                  ? prev.filter((item) => item !== "L")
-                  : [...prev, "L"]
+              setColors((prev) =>
+                prev.includes("Green")
+                  ? prev.filter((item) => item !== "Green")
+                  : [...prev, "Green"]
               )
             }
           >
             <p
               className={`${
-                sizes.includes("L") ? "bg-pink-100" : "bg-slate-200"
+                colors.includes("Green") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              L
+              GREEN
             </p>
           </div>
           <div
             onClick={() =>
-              setSizes((prev) =>
-                prev.includes("XL")
-                  ? prev.filter((item) => item !== "XL")
-                  : [...prev, "XL"]
+              setColors((prev) =>
+                prev.includes("Blue")
+                  ? prev.filter((item) => item !== "Blue")
+                  : [...prev, "Blue"]
               )
             }
           >
             <p
               className={`${
-                sizes.includes("XL") ? "bg-pink-100" : "bg-slate-200"
+                colors.includes("Blue") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              XL
+              BLUE
             </p>
           </div>
           <div
             onClick={() =>
-              setSizes((prev) =>
-                prev.includes("XXL")
-                  ? prev.filter((item) => item !== "XXL")
-                  : [...prev, "XXL"]
+              setColors((prev) =>
+                prev.includes("Red")
+                  ? prev.filter((item) => item !== "Red")
+                  : [...prev, "Red"]
               )
             }
           >
             <p
               className={`${
-                sizes.includes("XXL") ? "bg-pink-100" : "bg-slate-200"
+                colors.includes("Red") ? "bg-pink-100" : "bg-slate-200"
               } px-3 py-1 cursor-pointer`}
             >
-              XXL
+              RED
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="flex gap-2 mt-2">
         <input

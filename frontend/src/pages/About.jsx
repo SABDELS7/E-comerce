@@ -15,7 +15,7 @@ const About = () => {
         <img
           src={assets.about_img}
           alt="About Image"
-          className="w-full md:max-w-[450px]"
+          className="w-full md:max-w-[400px] rounded"
         />
         <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-600">
           <p className="">

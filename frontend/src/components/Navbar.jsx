@@ -2,13 +2,13 @@ import { useContext, useState, useEffect } from "react";
 import { assets } from "../assets/assets.js";
 import { Link, NavLink } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext.jsx";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import Cookies from "js-cookie"; // Import js-cookie
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const [langDropdown, setLangDropdown] = useState(false);
-  const [selectedLang, setSelectedLang] = useState("EN"); // Default language
+  // const [langDropdown, setLangDropdown] = useState(false);
+  // const [selectedLang, setSelectedLang] = useState("EN"); // Default language
   const [theme, setTheme] = useState(Cookies.get("theme") || "light"); // Get theme from cookies or default to "light"
 
   const {
@@ -21,7 +21,7 @@ const Navbar = () => {
     setCartItems,
   } = useContext(ShopContext);
 
-  const { t, i18n } = useTranslation("common");
+  // const { t, i18n } = useTranslation("common");
 
   // Apply the theme to the document on initial load
   useEffect(() => {
@@ -43,11 +43,13 @@ const Navbar = () => {
     setCartItems({});
   };
 
-  const changeLanguage = (lang) => {
-    setSelectedLang(lang);
-    setLangDropdown(false);
-    i18n.changeLanguage(lang.toLowerCase()); // Change the language using i18next
-  };
+  // const changeLanguage = (lang, e) => {
+  //   e.preventDefault(); // Prevent default behavior (if needed)
+  //   setSelectedLang(lang);
+  //   setLangDropdown(false);
+  //   i18n.changeLanguage(lang.toLowerCase()); // Change the language using i18next
+  //   Cookies.set("language", lang, { expires: 365 }); // Save language preference in cookies
+  // };
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
@@ -56,25 +58,25 @@ const Navbar = () => {
       </Link>
       <ul className="hidden sm:flex gap-5 text-gray-700 text-lg">
         <NavLink className="flex flex-col items-center gap-1" to="/">
-          <p>{t("home")}</p>
+          <p>{"home"}</p>
         </NavLink>
         <NavLink className="flex flex-col items-center gap-1" to="/collection">
-          <p>{t("collection")}</p>
+          <p>{"collection"}</p>
         </NavLink>
         <NavLink className="flex flex-col items-center gap-1" to="/about">
-          <p>{t("about")}</p>
+          <p>{"about"}</p>
         </NavLink>
         <NavLink className="flex flex-col items-center gap-1" to="/contact">
-          <p>{t("contact")}</p>
+          <p>{"contact"}</p>
         </NavLink>
         <NavLink
           className="flex flex-col items-center gap-1"
           to="../../../admin/src/components/Login.jsx"
           target="_blank"
         >
-          <p className="px-2 rounded-md text-gray-700 border bg-slate-300">
+          {/* <p className="px-2 rounded-md text-gray-700 border bg-slate-300">
             {t("adminPanel")}
-          </p>
+          </p> */}
         </NavLink>
       </ul>
 
@@ -129,16 +131,16 @@ const Navbar = () => {
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
                 <p className="cursor-pointer hover:text-black">
-                  {t("myProfile")}
+                  {"myProfile"}
                 </p>
                 <p
                   className="cursor-pointer hover:text-black"
                   onClick={() => navigate("/orders")}
                 >
-                  {t("orders")}
+                  {"orders"}
                 </p>
                 <p className="cursor-pointer hover:text-black" onClick={logout}>
-                  {t("logout")}
+                  {"logout"}
                 </p>
               </div>
             </div>
@@ -153,42 +155,36 @@ const Navbar = () => {
         </Link>
 
         {/* Language Dropdown (Smaller and Responsive) */}
-        <div className="relative">
+        {/* <div className="relative">
           <button
             onClick={() => setLangDropdown(!langDropdown)}
-            className="flex items-center gap-1 px-2 py-1 border rounded-md text-gray-700  cursor-pointer text-sm"
+            className="flex items-center gap-1 px-2 py-1 border rounded-md text-gray-700 cursor-pointer text-sm"
           >
-            {selectedLang} ▾
+          {selectedLang} ▾
           </button>
           {langDropdown && (
-            <div className="absolute right-0 mt-2 w-24 bg-white border rounded shadow-lg">
-              <p
-                className="cursor-pointer hover:bg-gray-200 p-2 text-sm"
-                onClick={() => changeLanguage("EN")}
-              >
-                🇺🇸 English
-              </p>
-              <p
-                className="cursor-pointer hover:bg-gray-200 p-2 text-sm"
-                onClick={() => changeLanguage("FR")}
-              >
-                🇫🇷 Français
-              </p>
-              <p
-                className="cursor-pointer hover:bg-gray-200 p-2 text-sm"
-                onClick={() => changeLanguage("ES")}
-              >
-                🇪🇸 Español
-              </p>
-              <p
-                className="cursor-pointer hover:bg-gray-200 p-2 text-sm"
-                onClick={() => changeLanguage("AR")}
-              >
-                🇸🇦 العربية
-              </p>
-            </div>
-          )}
+          <div className="absolute right-0 mt-2 w-24 bg-white border rounded shadow-lg z-50">
+          <button
+            className="cursor-pointer hover:bg-gray-200 p-2 text-sm w-full text-left"
+            onClick={(e) => changeLanguage("EN", e)}
+          >
+          🇺🇸 English
+          </button>
+          <button
+            className="cursor-pointer hover:bg-gray-200 p-2 text-sm w-full text-left"
+            onClick={(e) => changeLanguage("FR", e)}
+          >
+          🇫🇷 Français
+          </button>
+          <button
+            className="cursor-pointer hover:bg-gray-200 p-2 text-sm w-full text-left"
+            onClick={(e) => changeLanguage("AR", e)}
+          >
+          🇸🇦 العربية
+          </button>
         </div>
+        )}
+      </div> */}
 
         <img
           src={assets.menu_icon}
@@ -214,35 +210,35 @@ const Navbar = () => {
               alt="Dropdown Icon"
               className="h-4 rotate-180"
             />
-            <p>{t("back")}</p>
+            <p>{"back"}</p>
           </div>
           <NavLink
             className="py-4 pl-6 border"
             onClick={() => setVisible(false)}
             to="/"
           >
-            <p>{t("home")}</p>
+            <p>{"home"}</p>
           </NavLink>
           <NavLink
             className="py-4 pl-6 border"
             onClick={() => setVisible(false)}
             to="/collection"
           >
-            <p>{t("collection")}</p>
+            <p>{"collection"}</p>
           </NavLink>
           <NavLink
             className="py-4 pl-6 border"
             onClick={() => setVisible(false)}
             to="/about"
           >
-            <p>{t("about")}</p>
+            <p>{"about"}</p>
           </NavLink>
           <NavLink
             className="py-4 pl-6 border"
             onClick={() => setVisible(false)}
             to="/contact"
           >
-            <p>{t("contact")}</p>
+            <p>{"contact"}</p>
           </NavLink>
           <NavLink
             className="py-4 pl-6 border"
@@ -250,7 +246,7 @@ const Navbar = () => {
             to="../../../admin/src/components/Login.jsx"
             target="_blank"
           >
-            <p>{t("adminPanel")}</p>
+            <p>{"adminPanel"}</p>
           </NavLink>
         </div>
       </div>

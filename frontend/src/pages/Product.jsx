@@ -10,7 +10,7 @@ const Product = () => {
   const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
-  // const [size, setSize] = useState("");
+  const [color, setColor] = useState("");
   const fetchProductData = async () => {
     products.map((item) => {
       if (item._id === productId) {
@@ -69,25 +69,25 @@ const Product = () => {
           <p className="mt-5 text-gray-500 md:w-4/5">
             {productData.description}
           </p>
-          {/* <div className="fle flex-col gap-4 my-8">
-            <p>Select Size</p>
+          <div className="fle flex-col gap-4 my-8">
+            <p>Select Color</p>
             <div className="flex gap-2">
-              {productData.sizes.map((item, index) => (
+              {productData.colors.map((item, index) => (
                 <button
                   key={index}
-                  className={`border py-2 px-4 bg-gray-100 ${
-                    item === size ? "border-orange-500" : ""
+                  className={`border py-2 px-4 bg-gray-100 dark:bg-gray-700 ${
+                    item === color ? "border-orange-500" : ""
                   }`}
-                  onClick={() => setSize(item)}
+                  onClick={() => setColor(item)}
                 >
                   {item}
                 </button>
               ))}
             </div>
-          </div> */}
+          </div>
           <button
             className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
-            onClick={() => addToCart(productData._id)}  //,size
+            onClick={() => addToCart(productData._id, color)}  //,size
           >
             ADD TO CART
           </button>
@@ -118,7 +118,7 @@ const Product = () => {
           <p>
             E-commerce websites typically display products or services along
             with detailed descriptions, images, prices, and any available
-            variations (e.g., sizes, colors). Each product usually has its own
+            variations (e.g., designs, colors). Each product usually has its own
             dedicated page with relevant information.
           </p>
         </div>

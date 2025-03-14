@@ -1,24 +1,28 @@
-import i18next from 'i18next';
-import { initReactI18next } from 'react-i18next';
-// import enCommon from './translations/en/common.json';
-// import frCommon from './translations/fr/common.json';
-// import esCommon from './translations/es/common.json';
-// import arCommon from './translations/ar/common.json'; // Add Arabic translations
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-i18next
+import translationEN from "./locales/en.json";
+import translationFR from "./locales/fr.json";
+import translationAR from "./locales/ar.json"; // Arabic
+
+i18n
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
-      // en: { common: enCommon },
-      // fr: { common: frCommon },
-      // es: { common: esCommon },
-      // ar: { common: arCommon }, // Add Arabic
+      en: { translation: translationEN },
+      fr: { translation: translationFR },
+      ar: { translation: translationAR },
     },
-    lng: 'en', // Default language
-    fallbackLng: 'en',
+    fallbackLng: "en",
+    detection: {
+      order: ["localStorage", "navigator"],
+      caches: ["localStorage"],
+    },
     interpolation: {
       escapeValue: false,
     },
   });
 
-export default i18next;
+export default i18n;

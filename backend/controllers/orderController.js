@@ -4,7 +4,7 @@ import userModel from "../models/userModel.js";
 // import razorpay from "razorpay";
 
 // Global variables
-const currency = "usd";
+const currency = "mad";
 const deliveryCharge = 10;
 
 // Gateway Initialize

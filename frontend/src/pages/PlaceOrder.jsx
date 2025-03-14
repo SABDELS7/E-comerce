@@ -102,7 +102,7 @@ const PlaceOrder = () => {
               products.find((product) => product._id === items)
             );
             if (itemInfo) {
-              itemInfo.size = item;
+              itemInfo.color = item;
               itemInfo.quantity = cartItems[items][item];
               orderItems.push(itemInfo);
             }
@@ -269,30 +269,30 @@ const PlaceOrder = () => {
           {/* Payment Method Selection */}
           <div className="flex gap-3 flex-col lg:flex-row">
             <div
-              onClick={() => setMethod("stripe")}
+              onClick={() => setMethod("visa")}
               className={`flex items-center gap-3 border p-2 px-3 cursor-pointer ${
-                method === "stripe" ? "border-green-400" : ""
+                method === "visa" ? "border-green-400" : ""
               }`}
             >
               <p
                 className={`min-w-3.5 h-3.5 border rounded-full ${
-                  method === "stripe" ? "bg-green-400" : ""
+                  method === "visa" ? "bg-green-400" : ""
                 }`}
               ></p>
-              <img src={assets.stripe_logo} className="h-5 mx-4" alt="" />
+              <img src={assets.visa_logo} className="h-5 mx-4" alt="" />
             </div>
             <div
-              onClick={() => setMethod("razorpay")}
+              onClick={() => setMethod("mastercard")}
               className={`flex items-center gap-3 border p-2 px-3 cursor-pointer ${
-                method === "razorpay" ? "border-green-400" : ""
+                method === "mastercard" ? "border-green-400" : ""
               }`}
             >
               <p
                 className={`min-w-3.5 h-3.5 border rounded-full ${
-                  method === "razorpay" ? "bg-green-400" : ""
+                  method === "mastercard" ? "bg-green-400" : ""
                 }`}
               ></p>
-              <img src={assets.razorpay_logo} className="h-5 mx-4" alt="" />
+              <img src={assets.mastercard_logo} className="h-5 mx-4" alt="" />
             </div>
             <div
               onClick={() => setMethod("cod")}

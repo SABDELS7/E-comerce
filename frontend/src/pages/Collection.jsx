@@ -9,7 +9,7 @@ const Collection = () => {
   const [filterProducts, setFilterProducts] = useState([]);
   const [showFilter, setShowFilter] = useState(false);
   const [category, setCategory] = useState([]);
-  // const [subCategory, setSubCategory] = useState([]);
+  const [subCategory, setSubCategory] = useState([]);
   const [sortType, setSortType] = useState("relavent");
 
   const toggleCategory = (e) => {
@@ -19,13 +19,13 @@ const Collection = () => {
       setCategory((prev) => [...prev, e.target.value]);
     }
   };
-  // const toggleSubCategory = (e) => {
-  //   if (subCategory.includes(e.target.value)) {
-  //     setSubCategory((prev) => prev.filter((item) => item !== e.target.value));
-  //   } else {
-  //     setSubCategory((prev) => [...prev, e.target.value]);
-  //   }
-  // };
+  const toggleSubCategory = (e) => {
+    if (subCategory.includes(e.target.value)) {
+      setSubCategory((prev) => prev.filter((item) => item !== e.target.value));
+    } else {
+      setSubCategory((prev) => [...prev, e.target.value]);
+    }
+  };
 
   const applyFilter = () => {
     let productsCopy = products.slice();
@@ -40,11 +40,11 @@ const Collection = () => {
         category.includes(item.category)
       );
     }
-    // if (subCategory.length > 0) {
-    //   productsCopy = productsCopy.filter((item) =>
-    //     subCategory.includes(item.subCategory)
-    //   );
-    // }
+    if (subCategory.length > 0) {
+      productsCopy = productsCopy.filter((item) =>
+        subCategory.includes(item.subCategory)
+      );
+    }
     setFilterProducts(productsCopy);
   };
 
@@ -71,7 +71,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, search, showSearch, products]);  //category, subCategory
+  }, [category, subCategory, search, showSearch, products]);  //category, subCategory
 
   useEffect(() => {
     sortProducts();
@@ -130,42 +130,42 @@ const Collection = () => {
           </div>
         </div>
         {/* Sub-Category Filter */}
-        {/* <div
+        <div
           className={`border border-gray-300 pl-5 py-3 my-5 ${
             showFilter ? "" : "hidden"
           } sm:block`}
-        > */}
-          {/* <p className="mb-3 text-sm font-medium">Type</p>
+        >
+          <p className="mb-3 text-sm font-medium">Type</p>
           <div className="flex flex-col gap-2 text-sm font-light text-gray-700">
             <p className="flex gap-2">
               <input
                 type="checkbox"
                 className="w-3"
-                value={"Topwear"}
+                value={"Luxury"}
                 onChange={toggleSubCategory}
               />
-              Topwear
+              Luxury
             </p>
             <p className="flex gap-2">
               <input
                 type="checkbox"
                 className="w-3"
-                value={"Bottomwear"}
+                value={"Vintage"}
                 onChange={toggleSubCategory}
               />
-              Bottomwear
+              Vintage
             </p>
             <p className="flex gap-2">
               <input
                 type="checkbox"
                 className="w-3"
-                value={"Winterwear"}
+                value={"Sport"}
                 onChange={toggleSubCategory}
               />
-              Winterwear
+              Sport
             </p>
-          </div> */}
-        {/* </div> */}
+          </div>
+        </div>
       </div>
 
       {/* Right Side */}
