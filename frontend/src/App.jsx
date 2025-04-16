@@ -23,7 +23,7 @@ import CookieConsent from "./components/CookieConsent";
 import './i18n'; // Import the i18n configuration
 
 const App = () => {
-  const { i18n } = useTranslation();
+  // const { i18n } = useTranslation();
   const [theme, setTheme] = useState(
     Cookies.get("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
   );
@@ -33,12 +33,12 @@ const App = () => {
     Cookies.set("theme", theme, { expires: 365 });
   }, [theme]);
 
-  useEffect(() => {
-    if (i18n && i18n.changeLanguage) {
-      const userLang = Cookies.get("language") || navigator.language.split("-")[0] || "en";
-      i18n.changeLanguage(userLang);
-    }
-  }, [i18n]);
+  // useEffect(() => {
+  //   if (i18n && i18n.changeLanguage) {
+  //     const userLang = Cookies.get("language") || navigator.language.split("-")[0] || "en";
+  //     i18n.changeLanguage(userLang);
+  //   }
+  // }, [i18n]);
 
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw]">
