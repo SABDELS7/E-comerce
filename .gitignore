@@ -1,0 +1,46 @@
+# Ignore node_modules in all folders
+admin/node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Ignore build and dist folders
+admin/.next/
+admin/out/
+admin/build/
+admin/dist/
+
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/dist/
+
+backend/build/
+backend/dist/
+backend/target/ # For Spring Boot
+
+# Ignore environment variables
+admin/.env
+backend/.env
+frontend/.env
+
+# Logs
+admin/logs/
+admin/*.log
+backend/logs/
+backend/*.log
+frontend/logs/
+frontend/*.log
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# npm/yarn/pnpm lock files if you're using only one type
+# Uncomment the one you don't use
+# yarn.lock
+# package-lock.json
+# pnpm-lock.yaml
