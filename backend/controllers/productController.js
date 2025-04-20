@@ -12,6 +12,7 @@ const addProduct = async (req, res) => {
       subCategory,
       colors,
       bestseller,
+      folder = "e-commerce",
     } = req.body;
     const image1 = req.files.image1?.[0] || null;
     const image2 = req.files.image2?.[0] || null;
@@ -26,6 +27,7 @@ const addProduct = async (req, res) => {
       images.map(async (item) => {
         let result = await cloudinary.uploader.upload(item.path, {
           resource_type: "image",
+          folder: folder,
         });
         return result.secure_url;
       })
